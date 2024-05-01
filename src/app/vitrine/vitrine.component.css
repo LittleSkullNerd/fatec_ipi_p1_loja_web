@@ -1,0 +1,65 @@
+body {
+  grid-column: auto;
+}
+
+.img-produto {
+  width: 16rem;
+  border-radius: 50px;
+  max-width: 100%;
+  border: 5px solid #ccc;
+  margin-top: 20px; /* Adicionando margem superior para afastar a imagem do cabeçalho */
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+  position: relative;
+}
+  
+  .img-produto:hover {
+    transform: scale(1.03);
+  }
+
+  .info-produto {
+    left: 0;
+    width: 70%; 
+    background-color:#d4d4d4; 
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border-radius: 30px; 
+    margin-bottom: 10%;
+  }
+
+
+  .item-nome {
+    text-align: center;
+    font-family: 'Frank Ruhl Libre';
+  }
+
+  .item-valor {
+    font-weight: bold; 
+    font-size: 2rem;
+    font-family: 'Frank Ruhl Libre';
+    padding: 5px; 
+  }
+
+  .comprar {
+    display: inline-block;
+    padding: 10px 20px;
+    font-family: 'Frank Ruhl Libre';
+    font-size: 1.5rem;
+    background-color: #7a7979;
+    color: #fff;
+    border: 2px solid #585858;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 0 auto; 
+    display: block; 
+  }
+  
+  .comprar:hover {
+    background-color: #535353;
+  }
+

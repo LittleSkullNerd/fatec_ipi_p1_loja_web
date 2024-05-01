@@ -1,0 +1,75 @@
+.overlay {
+    position: relative;
+    z-index: 1;
+    margin-top: 0px; 
+    padding-bottom: 90px;
+  }
+
+  .overlay h2 {
+    margin-bottom: 5rem; 
+  }
+
+  label {
+    color: #fff;
+    font-family: 'Frank Ruhl Libre';
+  }
+
+  h2 {
+    color: #fff;
+    font-family: 'Frank Ruhl Libre';
+    bottom: -60px;
+    position: relative;
+  }
+  
+  .overlay::before {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 100%;
+    border-radius: 20px;
+    height: calc(100% + 50px); 
+    background-color: rgba(255, 255, 255, 0.2); 
+    z-index: -1; 
+  }
+  
+  .overlay-content {
+    position: relative;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+  }
+  
+  .btn-success {
+    margin-top: 20px;
+  }
+
+  .buttongravar {
+    display: inline-block; 
+    padding: 10px 20px; 
+    text-align: center; 
+    text-decoration: none;  
+    margin: 20px auto 0;
+    display: block;
+    position: relative;
+    bottom: -40px;
+    background-color: #0e910a;
+    color: #fff;
+    font-size: 2rem;
+    border: 2px solid #a6ddae;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .buttongravar:hover {
+    background-color: #45a049; 
+  }

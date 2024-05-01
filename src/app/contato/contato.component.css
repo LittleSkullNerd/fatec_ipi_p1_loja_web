@@ -1,0 +1,52 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2; /* Adicionando uma cor de fundo para o corpo */
+    padding-top: 20px; /* Espaço acima do cabeçalho */
+}
+
+h3 {
+    text-align: center;
+    color: #fff;
+    bottom: -20px;
+    position: relative;
+}
+
+form {
+    margin: 50px auto 0; /* Adicionando margem superior para descer o formulário */
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo transparente */
+    padding: 20px; /* Espaço interno do formulário */
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1); /* Sombra */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+b {
+    display: block;
+    margin-top: 10px;
+}
