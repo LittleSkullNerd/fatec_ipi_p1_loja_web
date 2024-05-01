@@ -95,6 +95,7 @@ body {
     top: 10px;
     left: 10px;
     margin-bottom: 5%;
+    z-index: 999;
     transition: transform 0.3s ease-in-out, border-width 0.3s ease-in-out; 
   }
 
@@ -164,6 +165,38 @@ footer p {
 
 .botao-menu:hover {
   background-color: #535353;
+}
+
+.mt-24 {
+  margin-top: 24px;
+}
+
+.mr-24 {
+  margin-right: 24px;
+}
+
+.ml-24 {
+  margin-left: 24px;
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+}
+
+.mt-12 {
+  margin-top: 12px;
+}
+
+.mr-12 {
+  margin-right: 12px;
+}
+
+.ml-12 {
+  margin-left: 12px;
+}
+
+.mb-12 {
+  margin-bottom: 12px;
 }
 
 /* Adicionando regras de mídia query para dispositivos móveis */
