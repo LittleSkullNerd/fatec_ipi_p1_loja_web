@@ -1,35 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Produto } from '../model/produto';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RequestsService } from '../services/requests.service';
+import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-detalhe',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './detalhe.component.html',
   styleUrl: './detalhe.component.css'
 })
-export class DetalheComponent {
-    public obj : Produto = new Produto();
-  
-    constructor(){
-      this.obj.codigo = 1;
-      this.obj.nome = "Furadeira";
-      this.obj.descritivo = "Furadeira de impacto";
-      this.obj.valor = 100;
-      this.obj.valorPromo = 90;
+export class DetalheComponent implements OnInit {
+  public obj: Produto = new Produto();
+  public produtos: Produto[] | undefined
+  public esteProduto: Produto | undefined
 
-      this.obj.codigo = 2;
-      this.obj.nome = "Furadeira";
-      this.obj.descritivo = "Furadeira de impacto";
-      this.obj.valor = 100;
-      this.obj.valorPromo = 90;
+  constructor(
+    private _service: RequestsService,
+    private _router: ActivatedRoute
+  ) { }
 
-      this.obj.codigo = 3;
-      this.obj.nome = "Furadeira";
-      this.obj.descritivo = "Furadeira de impacto";
-      this.obj.valor = 100;
-      this.obj.valorPromo = 90;
-    }
-    
+  ngOnInit(): void {
+    this.produtos = this._service.getProducts();
+    this.esteProduto = this.produtos.find(f => f.codigo == this._router.snapshot.params['codigo'])
+  }
 }

@@ -1,9 +1,12 @@
-<h2>{{obj.nome}}</h2>
-<p>{{obj.descritivo}}</p>
-<img src="./assets/{{obj.codigo}}.jpg"
-    width="100px"> <br>
-<div class="valor">R$ {{obj.valor}}</div>
-<div class="promo" *ngIf="obj.valorPromo>0">
-    Por R$ {{obj.valorPromo}}</div>
-<button *ngIf="obj.estoque>0">Comprar</button>
-<h3 *ngIf="obj.estoque==0">Sem Estoque</h3>
+<div class="detalhe-container" *ngIf="esteProduto">
+    <div>
+        <img src="../../assets/{{esteProduto.codigo}}.jpg" alt="" class="detalhe-img">
+    </div>
+    <div class="detalhe-descricao">
+        <div class="mt-24"> {{esteProduto.nome}} </div>
+        <div class="mt-12 ml-24"> {{esteProduto.descritivo}} </div>
+        <div class="button-container">
+            <button class="btn btn-success"> comprar </button>
+        </div>
+    </div>
+</div>
