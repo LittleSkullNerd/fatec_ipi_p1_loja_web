@@ -8,14 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './contato.component.css'
 })
 export class ContatoComponent {
-mensagemEnviada: any;
-enviarFormulario() {
-throw new Error('Method not implemented.');
-}
-  public mensagem: String = "";
 
-  public enviar(){
-      this.mensagem = "Contato enviado com sucesso!!! Verifique !!!";
+  public mensagem: string | undefined
+
+  public enviarForm() {
+    this.mensagem = "Formulário enviado com sucesso!";
   }
-
 }

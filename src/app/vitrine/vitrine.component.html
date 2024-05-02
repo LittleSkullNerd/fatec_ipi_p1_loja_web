@@ -1,19 +1,38 @@
 <h3 *ngIf="lista.length<=0">
   Não existem produtos cadastrados</h3>
 
-<body>
+<div class="container-body mt-24 mb-24">
+  <div class="pesquisar-container">
+    <input type="text" (input)="teste($event)" placeholder="Digite sua pesquisa...">
+    <button class="pesquisa">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+</div>
 
-  <div class="row justify-content-center">
-    <div *ngFor="let item of lista; index as i" class="" style="width:400px">
-      <a href="detalhe/{{item.codigo}}" target="_self">
-        <img class="img-produto" src="./assets/{{item.codigo}}.jpg" width="30px" alt="Card image">
-      </a>
-      <div class="info-produto">
-        <h4 class="item-nome">{{item.nome}}</h4>
-        <p class="item-valor">R$ {{item.valor}}</p>
-        <button *ngIf="item.estoque>0" class="comprar" (click)="comprar(item);">Comprar</button>
-      </div>
+
+<div class="container-card-produtos row justify-content-center" *ngIf="!inputValue">
+  <div *ngFor="let item of lista; index as i" class="" style="width:400px">
+    <a href="detalhe/{{item.codigo}}" target="_self">
+      <img class="img-produto" src="./assets/{{item.codigo}}.jpg" width="30px" alt="Card image">
+    </a>
+    <div class="info-produto">
+      <h4 class="item-nome">{{item.nome}}</h4>
+      <p class="item-valor">R$ {{item.valor}}</p>
+      <button *ngIf="item.estoque>0" class="comprar" (click)="comprar(item);">Comprar</button>
     </div>
   </div>
+</div>
 
-</body>
+<div class="container-card-produtos row justify-content-center" *ngIf="inputValue">
+  <div *ngFor="let item of listaFiltro; index as i" class="" style="width:400px">
+    <a href="detalhe/{{item.codigo}}" target="_self">
+      <img class="img-produto" src="./assets/{{item.codigo}}.jpg" width="30px" alt="Card image">
+    </a>
+    <div class="info-produto">
+      <h4 class="item-nome">{{item.nome}}</h4>
+      <p class="item-valor">R$ {{item.valor}}</p>
+      <button *ngIf="item.estoque>0" class="comprar" (click)="comprar(item);">Comprar</button>
+    </div>
+  </div>
+</div>
