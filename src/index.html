@@ -17,33 +17,36 @@
 
 <body>
   <header>
-    <div class="container">
-      <a href="./index.html">
-        <img src="./assets/logo.png" class="logo" alt="Logo da Loja">
-      </a>
-
-      <div class="pesquisar-container">
-        <input type="text" [(ngModel)]="searchTerm" placeholder="Digite sua pesquisa..." oninput="myMethod(this.value)">
-        <button (click)="search()" class="pesquisa">
-          <i class="fas fa-search"></i>
-        </button>
+    <div class="menu-nav-bar">
+      <div>
+        <a href="./index.html">
+          <img src="./assets/logo.png" class="logo" alt="Logo da Loja">
+        </a>
       </div>
-
-      <div class="actions">
-        <button type="button" class="login">
-          <a href="./login" class="loginn">Fazer Login</a>
-        </button>
-
-        <button type="button" class="cesta">
-          <a href="./cesta">
-            <i class="fas fa-shopping-basket"></i>
+      <div>
+        <a href="./sobremim">
+          <button type="button" class="botao-menu"> Sobre Mim </button>
+        </a>
+      </div>
+      <div>
+        <a href="./contato">
+          <button type="button" class="botao-menu"> Contato </button>
+        </a>
+      </div>
+      <div>
+        <div class="actions">
+          <a href="./login" class="loginn">
+            <button type="button" class="login">
+              Fazer Login
+            </button>
           </a>
-        </button>
-      </div>
 
-      <div class="botoes-menu">
-        <button type="button" class="botao-menu"><a href="./sobremim">Sobre Mim</a></button>
-        <button type="button" class="botao-menu"><a href="./contato">Contato</a></button>
+          <a href="./cesta">
+            <button type="button" class="cesta">
+              <i class="fas fa-shopping-basket"></i>
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   </header>
