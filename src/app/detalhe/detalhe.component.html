@@ -1,0 +1,13 @@
+<div class="detalhe-container" *ngIf="esteProduto">
+    <div>
+        <img src="../../assets/{{esteProduto.codigo}}.jpg" alt="" class="detalhe-img">
+    </div>
+    <div class="detalhe-descricao">
+        <div class="mt-24"> {{esteProduto.nome}} </div>
+        <div class="mt-12 ml-24"> {{esteProduto.descritivo}} </div>
+        <div class="button-container">
+            <a href="index.html"> <button class="btn btn-light mr-12"> voltar </button> </a>
+            <button class="btn btn-success"> comprar </button>
+        </div>
+    </div>
+</div>
