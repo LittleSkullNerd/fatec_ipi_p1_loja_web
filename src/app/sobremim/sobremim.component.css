@@ -1,0 +1,43 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: relative; /* Adicionando posição relativa para controlar o quadrado de fundo */
+}
+
+
+.profile {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile img {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.biografia {
+    text-align: center;
+}
+
+.biografia h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.biografia p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+h2 {
+    color: white;
+}
+
+p {
+    color: white;
+}

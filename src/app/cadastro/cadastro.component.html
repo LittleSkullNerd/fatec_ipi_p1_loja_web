@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-md-6 overlay">
+        <div class="overlay-content">
+          <h2 class="text-center">Cadastro</h2>
+          <div class="alert alert-info">{{ mensagem }}</div>
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" class="form-control" id="nome" [(ngModel)]="obj.nome">
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" [(ngModel)]="obj.email">
+          </div>
+          <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="text" class="form-control" id="telefone" [(ngModel)]="obj.telefone">
+          </div>
+          <div class="form-group">
+            <label for="documento">Documento:</label>
+            <input type="text" class="form-control" id="documento" [(ngModel)]="obj.documento">
+          </div>
+          <div class="form-group">
+            <label for="cep">CEP:</label>
+            <input type="text" class="form-control" id="cep" [(ngModel)]="obj.cep">
+          </div>
+          <div class="form-group">
+            <label for="cidade">Cidade:</label>
+            <input type="text" class="form-control" id="cidade" [(ngModel)]="obj.cidade">
+          </div>
+          <div class="form-group">
+            <label for="estado">Estado:</label>
+            <input type="text" class="form-control" id="estado" [(ngModel)]="obj.estado">
+          </div>
+          <div class="form-group">
+            <label for="logradouro">Logradouro:</label>
+            <input type="text" class="form-control" id="logradouro" [(ngModel)]="obj.logradouro">
+          </div>
+          <div class="form-group">
+            <label for="complemento">Complemento:</label>
+            <input type="text" class="form-control" id="complemento" [(ngModel)]="obj.complemento">
+          </div>
+          <button type="button" class="buttongravar" (click)="gravar()">Gravar</button>
+        </div>
+      </div>
+    </div>
+  </div>

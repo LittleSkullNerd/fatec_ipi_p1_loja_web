@@ -1,0 +1,71 @@
+h2 {
+    color: #fff;
+    font-family: 'Frank Ruhl Libre';
+    font-size: 3rem;
+  }
+  
+  h4 {
+    color: rgb(245, 70, 70);
+    font-family: 'Frank Ruhl Libre';
+  }
+  
+
+  a {
+    font-stretch: condensed;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+    font-family: 'Frank Ruhl Libre';
+  }
+
+  a:hover {
+    color: #d2a9d6;
+  }
+
+  .entrar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; 
+  }
+
+  .buttonentrar {
+    background-color: #7a7979;
+    color: #fff;
+    border: 2px solid #585858;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 10px 20px;
+  }
+
+  .buttonentrar:hover {
+    background-color: #535353;
+  }
+  
+  .overlay {
+    position: relative;
+    z-index: 1;
+    margin-top: 3rem; 
+  }
+  
+  .overlay::before {
+    content: "";
+    position: absolute;
+    top: -30px; 
+    left: 0;
+    width: 100%;
+    border-radius: 20px;
+    height: calc(100% + 50px); 
+    background-color: rgba(255, 255, 255, 0.2); 
+    z-index: -1; 
+  }
+  
+  .overlay-content {
+    position: relative;
+  }
+  
+  .form-group {
+    position: relative;
+    z-index: 1;
+  }

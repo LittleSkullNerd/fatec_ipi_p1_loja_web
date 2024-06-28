@@ -1,0 +1,14 @@
+{
+  "routes": [
+    "/",
+    "/cadastro",
+    "/cesta",
+    "/contato",
+    "/detalhe",
+    "/esquecisenha",
+    "/login",
+    "/pesquisa",
+    "/sobremim",
+    "/vitrine"
+  ]
+}
