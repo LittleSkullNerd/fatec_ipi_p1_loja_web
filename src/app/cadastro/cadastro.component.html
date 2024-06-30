@@ -1,47 +1,49 @@
 <div class="container">
-    <div class="row justify-content-center align-items-center">
-      <div class="col-md-6 overlay">
-        <div class="overlay-content">
-          <h2 class="text-center">Cadastro</h2>
+  <div class="row justify-content-center align-items-center">
+    <div class="col-md-6 overlay">
+      <div class="overlay-content">
+        <h2 class="text-center">Cadastro</h2>
+        <form>
           <div class="alert alert-info">{{ mensagem }}</div>
           <div class="form-group">
             <label for="nome">Nome:</label>
-            <input type="text" class="form-control" id="nome" [(ngModel)]="obj.nome">
+            <input type="text" class="form-control" id="nome" [(ngModel)]="cliente.nome" required name="nome">
           </div>
           <div class="form-group">
             <label for="email">Email:</label>
-            <input type="email" class="form-control" id="email" [(ngModel)]="obj.email">
+            <input type="email" class="form-control" id="email" [(ngModel)]="cliente.email" required name="email">
           </div>
           <div class="form-group">
             <label for="telefone">Telefone:</label>
-            <input type="text" class="form-control" id="telefone" [(ngModel)]="obj.telefone">
+            <input type="text" class="form-control" id="telefone" [(ngModel)]="cliente.telefone" name="telefone">
           </div>
           <div class="form-group">
             <label for="documento">Documento:</label>
-            <input type="text" class="form-control" id="documento" [(ngModel)]="obj.documento">
+            <input type="text" class="form-control" id="documento" [(ngModel)]="cliente.documento" name="documento">
           </div>
           <div class="form-group">
             <label for="cep">CEP:</label>
-            <input type="text" class="form-control" id="cep" [(ngModel)]="obj.cep">
+            <input type="text" class="form-control" id="cep" [(ngModel)]="cliente.cep" name="cep">
           </div>
           <div class="form-group">
             <label for="cidade">Cidade:</label>
-            <input type="text" class="form-control" id="cidade" [(ngModel)]="obj.cidade">
+            <input type="text" class="form-control" id="cidade" [(ngModel)]="cliente.cidade" name="cidade">
           </div>
           <div class="form-group">
             <label for="estado">Estado:</label>
-            <input type="text" class="form-control" id="estado" [(ngModel)]="obj.estado">
+            <input type="text" class="form-control" id="estado" [(ngModel)]="cliente.estado" name="estado">
           </div>
           <div class="form-group">
             <label for="logradouro">Logradouro:</label>
-            <input type="text" class="form-control" id="logradouro" [(ngModel)]="obj.logradouro">
+            <input type="text" class="form-control" id="logradouro" [(ngModel)]="cliente.logradouro" name="logradouro">
           </div>
           <div class="form-group">
             <label for="complemento">Complemento:</label>
-            <input type="text" class="form-control" id="complemento" [(ngModel)]="obj.complemento">
+            <input type="text" class="form-control" id="complemento" [(ngModel)]="cliente.complemento" name="complemento">
           </div>
-          <button type="button" class="buttongravar" (click)="gravar()">Gravar</button>
-        </div>
+          <button type="submit" class="buttongravar" (click)="gravar()">Gravar</button>
+        </form>
       </div>
     </div>
   </div>
+</div>

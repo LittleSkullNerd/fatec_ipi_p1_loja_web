@@ -1,4 +1,5 @@
 export class Cliente {
+    public clientId: number = 0;
     public codigo: number = 0;
     public nome: string = "";
     public email: string= "";

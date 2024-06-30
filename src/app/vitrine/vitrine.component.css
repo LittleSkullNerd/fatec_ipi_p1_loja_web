@@ -2,43 +2,41 @@ body {
   grid-column: auto;
 }
 
-.img-produto {
-  width: 16rem;
-  border-radius: 50px;
-  max-width: 100%;
-  border: 5px solid #ccc;
-  margin-top: 20px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  cursor: pointer;
-  position: relative;
+.produtos-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 30px
 }
 
-.img-produto:hover {
-  transform: scale(1.03);
+.img-produto {
+  transition: transform 0.3s ease-in-out;
+  width: 14rem;
+  border-radius: 50px;
 }
+
+/* .img-produto:hover {
+  transform: scale(1.03);
+} */
 
 .info-produto {
-  left: 0;
-  width: 70%;
-  background-color: #d4d4d4;
-  border: 1px solid #ccc;
-  padding: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border-radius: 30px;
-  margin-bottom: 10%;
+  margin: 24px 0px;
+  color: white;
 }
 
+.produto-card {
+  padding: 24px;
+  BACKGROUND-COLOR: rgb(244, 244, 244, 0.1);
+  border-radius: 4%;
+}
 
 .item-nome {
-  text-align: center;
+  text-align: left;
   font-family: 'Frank Ruhl Libre';
 }
 
 .item-valor {
-  font-weight: bold;
-  font-size: 2rem;
+  text-align: left;
   font-family: 'Frank Ruhl Libre';
   padding: 5px;
 }

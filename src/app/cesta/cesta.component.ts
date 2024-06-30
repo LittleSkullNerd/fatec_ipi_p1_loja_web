@@ -1,6 +1,6 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Item } from '../model/item';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-cesta',
@@ -20,7 +20,7 @@ throw new Error('Method not implemented.');
   constructor(){
     let json = localStorage.getItem("cesta");
     if(json==null){
-      this.mensagem = "Sua Cesta de Compras esta vazia!!!";
+      this.mensagem = "Sua Cesta de Compras esta vazia!";
     } 
     else {
       this.lista = JSON.parse(json);

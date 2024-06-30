@@ -1,8 +1,11 @@
-import { Component } from '@angular/core';
-import { Cliente } from '../model/cliente';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { json } from 'stream/consumers';
+import { lastValueFrom } from 'rxjs';
+import { Cliente } from '../model/cliente';
+import { ClienteService } from '../services/cliente.service';
+
+
 @Component({
   selector: 'app-cadastro',
   standalone: true,
@@ -12,21 +15,16 @@ import { json } from 'stream/consumers';
 })
 export class CadastroComponent {
   public mensagem: string = "";
-  public obj: Cliente = new Cliente(); 
+  public cliente: Cliente = { cep: '', cidade: '', clientId: 0, codigo: 0, complemento: '', documento: '', email: '', estado: '', logradouro: '', nome: '', telefone: '', }
 
-  public constructor(){
-    let json = localStorage.getItem("cadastro");
-    if(json==null){
-      this.mensagem = "Você ainda não tem cadastro!!!";
-    } else {
-      this.obj = JSON.parse(json);
-    }  
-  }
+  public constructor(private _service: ClienteService) { }
 
-  public gravar(){
-    this.mensagem = "Cliente cadastrado com sucesso!"; 
-    console.log(JSON.stringify(this.obj));   
-    localStorage.setItem("cadastro", 
-                        JSON.stringify(this.obj));
+  async gravar() {
+    try {
+      const userExists = await lastValueFrom(this._service.cadastrar(this.cliente));
+      if (userExists) alert("Usuário já cadastrado!")
+    } catch (error) {
+      alert("Ocorreu um erro durante o cadastro!");
+    }
   }
 }
