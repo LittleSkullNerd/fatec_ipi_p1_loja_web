@@ -41,6 +41,10 @@
             <label for="complemento">Complemento:</label>
             <input type="text" class="form-control" id="complemento" [(ngModel)]="cliente.complemento" name="complemento">
           </div>
+          <div class="form-group">
+            <label for="complemento">Senha:</label>
+            <input type="password" class="form-control" id="complemento" [(ngModel)]="cliente.senha" name="senha">
+          </div>
           <button type="submit" class="buttongravar" (click)="gravar()">Gravar</button>
         </form>
       </div>

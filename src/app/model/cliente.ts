@@ -10,4 +10,5 @@ export class Cliente {
     public estado: string= "";
     public logradouro: string= "";
     public complemento:string= "";
+    public senha:string= "";
 }

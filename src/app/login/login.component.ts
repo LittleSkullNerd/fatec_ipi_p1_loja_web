@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Cliente } from '../model/cliente';
 import { Login } from '../model/login';
 import { ClienteService } from '../services/cliente.service';
-import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -13,22 +13,34 @@ import { lastValueFrom } from 'rxjs';
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   public mensagem: String = "";
   public obj: Cliente = new Cliente();
   login: Login = { email: '', senha: '' };
 
-  constructor(private _service: ClienteService) { }
+  constructor(private _service: ClienteService, private _router: Router) { }
+
+  ngOnInit(): void {
+    const loggedUser = localStorage.getItem('usuario');
+
+    if (loggedUser && loggedUser.length > 10) {
+      this._router.navigate(['/']);
+    }
+  }
 
   async entrar() {
     try {
-      const userExists = await lastValueFrom(this._service.login(this.login));
-      if (userExists) {
-        alert("Usuário encontrado e login bem-sucedido!");
-      } else {
-        alert("Usuário não encontrado ou credenciais inválidas.");
+      this._service.login(this.login).subscribe(s => {
+        if (s.email.length > 0) {
+          alert(`Bem vindo! ${s.nome}`)
+          this._router.navigate(['/']);
+        }
 
-      }
+        localStorage.setItem('usuario', JSON.stringify(s));
+      });
+
+      // alert("Usuário encontrado e login bem-sucedido!");
+      // alert("Usuário não encontrado ou credenciais inválidas.");
     } catch (error) {
       alert("Ocorreu um erro durante a verificação do login!");
     }

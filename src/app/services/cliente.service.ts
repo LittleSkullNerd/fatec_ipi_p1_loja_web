@@ -12,12 +12,23 @@ export class ClienteService {
 
   constructor(private _http: HttpClient) { }
 
-  login(obj: Login): Observable<boolean> {
+  login(obj: Login): Observable<Cliente> {
     return this._http.post<any>(`${this._url}/Client/Login`, obj).pipe(
-      map(response => response && response.success),
-      catchError(() => of(false))
+      map(response => {
+        if (response) {
+          return response as Cliente;
+        } else {
+          throw new Error('Login unsuccessful');
+        }
+      }),
+      catchError((error) => {
+        alert("Usuário não encontrado ou credenciais inválidas.")
+        window.location.reload()
+        throw new Error(error);
+      })
     );
   }
+
 
   cadastrar(obj: Cliente): Observable<boolean> {
     return this._http.post<any>(`${this._url}/Client`, obj).pipe(
