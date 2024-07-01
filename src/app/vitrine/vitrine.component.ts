@@ -20,9 +20,8 @@ export class VitrineComponent implements OnInit {
   constructor(private _service: ProdutoService, private _router: Router) { }
 
   ngOnInit(): void {
-    debugger
-    let logged = localStorage.getItem('usuario') || "None"
-    this.usuarioLogado = JSON.parse(logged);
+    let logged = localStorage.getItem('usuario') || ""
+    if (logged != "") this.usuarioLogado = JSON.parse(logged);
     this._service.listar().subscribe((s: Produto[]) => this.lista = s);
   }
 

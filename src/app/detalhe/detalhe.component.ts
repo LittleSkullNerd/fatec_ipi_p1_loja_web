@@ -2,9 +2,9 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Item } from '../model/item';
 import { Produto } from '../model/produto';
 import { ProdutoService } from '../services/produto.service';
-import { Item } from '../model/item';
 @Component({
   selector: 'app-detalhe',
   standalone: true,
@@ -25,7 +25,7 @@ export class DetalheComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = parseInt(this._router.snapshot.params['codigo'])
-    this._service.buscarPorId(this.id).subscribe((s: Produto) => {debugger; this.esteProduto = s});
+    this._service.buscarPorId(this.id).subscribe((s: Produto) => this.esteProduto = s);
   }
 
   public comprar(produto: Produto) {

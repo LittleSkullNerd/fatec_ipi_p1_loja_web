@@ -40,3 +40,26 @@
     bottom: 0;
     right: 0;
 }
+
+@media only screen and (max-width: 978px) {
+    .detalhe-container {
+        display: flex;
+        background-color: rgb(244, 244, 244, 0.1);
+        color: white;
+        padding: 24px;
+        border-radius: 10px;
+        margin: 24px 0px;
+        width: auto;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button-container {
+        position: relative;
+        margin: 24px 0px;
+    }
+}

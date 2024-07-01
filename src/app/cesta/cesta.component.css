@@ -65,3 +65,9 @@
 .btn-success:hover {
   background-color: #218838;
 }
+
+@media only screen and (max-width: 978px) {
+  .container[_ngcontent-ng-c3329858705] {
+    width: 100%;
+  }
+}

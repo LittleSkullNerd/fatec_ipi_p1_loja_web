@@ -228,3 +228,76 @@ footer p {
   }
 
 }
+
+@media only screen and (max-width: 600px) {
+
+
+  .menu-nav-bar {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    width: 100%;
+  }
+
+  .logo {
+    width: 10rem;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    top: -0.2rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: auto;
+  }
+
+  .botao-mim,
+  .botao-contato {
+    padding: 0.20rem;
+    margin: 0.5rem 0;
+    position: relative;
+  }
+
+  .botao-mim {
+    width: 7rem;
+    top: 3rem;
+    right: -0.8rem;
+  }
+
+  .botao-contato {
+    width: 5rem;
+    top: 2.6rem;
+    right: -0.7rem;
+  }
+
+
+  .login {
+    padding: 0.20rem;
+    margin: 0.5rem 0;
+    width: 6rem;
+    top: -6rem;
+    right: -0.7rem;
+  }
+
+  .cesta {
+    right: 1rem;
+    top: 0.3rem;
+  }
+
+  .pesquisar-container .pesquisa {
+    display: none;
+  }
+
+  footer {
+    padding: 0.625rem;
+    font-size: 0.875rem;
+  }
+
+  input {
+    width: 20rem;
+  }
+}
