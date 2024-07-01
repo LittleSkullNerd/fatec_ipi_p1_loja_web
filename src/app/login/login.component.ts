@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
     const loggedUser = localStorage.getItem('usuario');
 
     if (loggedUser && loggedUser.length > 10) {
-      this._router.navigate(['/']);
+      this._router.navigate(['/meu-cadastro']);
     }
   }
 
@@ -39,11 +39,8 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('usuario', JSON.stringify(s));
       });
 
-      // alert("Usuário encontrado e login bem-sucedido!");
-      // alert("Usuário não encontrado ou credenciais inválidas.");
     } catch (error) {
       alert("Ocorreu um erro durante a verificação do login!");
     }
   }
-
 }

@@ -29,6 +29,13 @@ export class ClienteService {
     );
   }
 
+  updateCliente(client:Cliente): Observable<Cliente> {
+    return this._http.put<Cliente>(`${this._url}/Client`, client).pipe(
+      catchError((error) => {
+        throw new Error(error);
+      })
+    );
+  }
 
   cadastrar(obj: Cliente): Observable<boolean> {
     return this._http.post<any>(`${this._url}/Client`, obj).pipe(
