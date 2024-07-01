@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Observable } from "rxjs";
+import { Observable, catchError, throwError } from "rxjs";
 import { Produto } from "../model/produto";
 
 @Injectable({
@@ -19,18 +19,20 @@ export class ProdutoService {
     });
   }
 
-  public alterar(obj: Produto): void {
-    this._http.put<String>("http://localhost:8090/api/produto", obj).subscribe({
-      next: () => "Reigstro alterado com sucesso!",
-      error: () => "Ocorreu um erro durante a gravação!"
-    });
+  update(produto:Produto): Observable<Produto> {
+    return this._http.put<Produto>(`${this._url}/Produto`, produto).pipe(
+      catchError((error) => {
+        throw new Error(error);
+      })
+    );
   }
 
-  public remover(obj: Produto): void {
-    this._http.delete<String>("http://localhost:8090/api/produto/" + obj.codigo).subscribe({
-      next: () => "Registro removido com sucesso!",
-      error: () => "Ocorreu um erro durante a gravação!"
-    });
+  remover(pid: number): Observable<Produto> {
+    return this._http.delete<Produto>(`${this._url}/Produto/${pid}`).pipe(
+      catchError((error) => {
+        return throwError(() => new Error(error));
+      })
+    );
   }
 
   public carregar(codigo: string): Observable<Produto> {

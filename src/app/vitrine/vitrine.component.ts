@@ -1,5 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Cliente } from '../model/cliente';
 import { Item } from '../model/item';
 import { Produto } from '../model/produto';
 import { ProdutoService } from '../services/produto.service';
@@ -13,10 +15,14 @@ import { ProdutoService } from '../services/produto.service';
   styleUrl: './vitrine.component.css'
 })
 export class VitrineComponent implements OnInit {
+  public usuarioLogado: Cliente = new Cliente;
 
-  constructor(private _service: ProdutoService) { }
+  constructor(private _service: ProdutoService, private _router: Router) { }
 
   ngOnInit(): void {
+    debugger
+    let logged = localStorage.getItem('usuario') || "None"
+    this.usuarioLogado = JSON.parse(logged);
     this._service.listar().subscribe((s: Produto[]) => this.lista = s);
   }
 
@@ -47,9 +53,19 @@ export class VitrineComponent implements OnInit {
   public teste(_: any) {
     this.inputValue = _.target.value
     this.lista.filter(f => f.nome.includes(_.target.value))
-    
+
     let currentObj: Produto[] = this.lista.filter(f => f.nome.toLowerCase().includes(_.target.value))
     currentObj.length > 0 ? this.listaFiltro = currentObj : ''
   }
 
+  public editar(item: Produto) {
+    this._router.navigate([`${item.produtoId}/editar`])
+  }
+
+  public removerProduto(pid: number) {
+    this._service.remover(pid).subscribe(() => {
+      alert(`Produto removido com sucesso!`);
+      window.location.reload()
+    })
+  }
 }
