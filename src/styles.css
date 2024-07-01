@@ -150,6 +150,34 @@ footer p {
   background-color: #535353;
 }
 
+.botao-mim {
+  background-color: #7a7979;
+  color: #fff;
+  border: 0.125rem solid #585858; 
+  border-radius: 0.3125rem; 
+  padding: 0.625rem 1.25rem; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao-mim:hover {
+  background-color: #535353;
+}
+
+.botao-contato {
+  background-color: #7a7979;
+  color: #fff;
+  border: 0.125rem solid #585858; 
+  border-radius: 0.3125rem; 
+  padding: 0.625rem 1.25rem; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao-contato:hover {
+  background-color: #535353;
+}
+
 .mt-24 {
   margin-top: 24px;
 }
@@ -182,54 +210,7 @@ footer p {
   margin-bottom: 12px;
 }
 
-@media only screen and (max-width: 600px) {
-  .logo {
-    width: 30%;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    margin-bottom: 3%;
-  }
-
-  header {
-    padding: 0.2rem;
-  }
-
-  .cesta {
-    top: 5rem;
-    right: 1rem;
-  }
-
-  .botoes-menu {
-    margin-top: -40px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .botao-menu {
-    padding: 8px 15px;
-    margin: 0 15px;
-  }
-
-  .pesquisar-container {
-    display: none;
-  }
-
-  .login {
-    top: 5px;
-    right: 5px;
-    padding: 8px 15px;
-    position: absolute;
-  }
-
-
-  .botao-menu {
-    margin: 0 100px;
-  }
-
-}
-
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) { 
 
 
   .menu-nav-bar {
@@ -241,43 +222,43 @@ footer p {
   }
 
   .logo {
-    width: 10rem;
-    height: auto;
-    margin: 0 auto;
+    width: 10rem; 
+    height: auto; 
+    margin: 0 auto; 
     position: relative;
     top: -0.2rem;
   }
 
   .actions {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: column; 
+    align-items: flex-end; 
     width: auto;
   }
 
-  .botao-mim,
+    .botao-mim,
   .botao-contato {
-    padding: 0.20rem;
-    margin: 0.5rem 0;
+    padding: 0.20rem; 
+    margin: 0.5rem 0; 
     position: relative;
   }
 
   .botao-mim {
-    width: 7rem;
-    top: 3rem;
-    right: -0.8rem;
+    width: 7rem; 
+    top: 3rem; 
+    right: -0.8rem; 
   }
 
   .botao-contato {
-    width: 5rem;
-    top: 2.6rem;
-    right: -0.7rem;
+    width: 5rem; 
+    top: 2.6rem; 
+    right: -0.7rem; 
   }
 
 
   .login {
-    padding: 0.20rem;
-    margin: 0.5rem 0;
+    padding: 0.20rem; 
+    margin: 0.5rem 0; 
     width: 6rem;
     top: -6rem;
     right: -0.7rem;
@@ -300,4 +281,5 @@ footer p {
   input {
     width: 20rem;
   }
+
 }
